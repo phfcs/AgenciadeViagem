@@ -1,34 +1,34 @@
 Feature: realizar o cadastro de clientes em uma fila de espera
 
-    AS Um usuario do sistema (médico)
+    AS Um usuario do sistema
     I WANT TO cadastrar um cliente na fila de espera
     SO THAT Eu possa orderná-los para passarem por atendimento
 
 Scenario: Agente tenta cadastrar cliente ainda não cadastrado
-GIVEN o médico de nome "Igor Xavier", de CPF: "095104875-68" com CRM "11.825", está na área "Cadastrar Cliente em fila de espera"
+GIVEN o agente de nome "Igor Xavier", de CPF: "095104875-68" com REGISTRO  "11.825", está na área "Cadastrar Cliente em fila de espera"
 AND ele adiciona o nome do cliente, número do CPF, data de nascimento, endereço, nome da mãe, como "informações essenciais" (que não podem faltar)
-AND as informações adicionais: número do cartão do SUS, responsável e número de telefone
-WHEN o médico termina de cadastrar o cliente
+AND as informações adicionais: responsável e número de telefone
+WHEN o agente termina de cadastrar o cliente
 THEN o cadastro do cliente é realizado com sucesso
 AND a mensagem "Cliente inserido na fila de espera!" aparece na tela
-AND o médico é direcionado para a área de "Cadastrar Cliente em fila de espera"
+AND o agente é direcionado para a área de "Cadastrar Cliente em fila de espera"
 
 
-Scenario: Médico tenta cadastrar cliente que já foi cadastrado naquele dia
-GIVEN o médico de nome "Igor Xavier", de CPF: "095104875-68" com CRM "11.825", está na área "Cadastrar Cliente em fila de espera"
+Scenario: Agente tenta cadastrar cliente que já foi cadastrado naquele dia
+GIVEN o agente de nome "Igor Xavier", de CPF: "095104875-68" com REGISTRO "11.825", está na área "Cadastrar Cliente em fila de espera"
 AND ele adiciona o nome do cliente, número do CPF, data de nascimento, endereço, nome da mãe, como "informações essenciais" (que não podem faltar)
-AND as informações adicionais: número do cartão do SUS, responsável e número de telefone
-WHEN o médico termina de cadastrar o cliente
+AND as informações adicionais: responsável e número de telefone
+WHEN o agente termina de cadastrar o cliente
 THEN É exibida a mensagem: "O cliente já está cadastrado na fila de espera!"
-AND o médico é direcionado para a área de "Cadastrar Cliente em fila de espera"
+AND o agente é direcionado para a área de "Cadastrar Cliente em fila de espera"
 
 
-Scenario: Médico tenta cadastrar cliente ainda não cadastrado
-GIVEN o médico de nome "Igor Xavier", de CPF: "095104875-68" com CRM "11.825", está na área "Cadastrar Cliente em fila de espera"
+Scenario: Agente tenta cadastrar cliente ainda não cadastrado
+GIVEN o agente de nome "Igor Xavier", de CPF: "095104875-68" com REGISTRO "11.825", está na área "Cadastrar Cliente em fila de espera"
 AND ele adiciona o nome do cliente, número do CPF, data de nascimento como "informações essenciais", mas não coloca seu endereço nem nome da mãe
-AND as informações adicionais: número do cartão do SUS, responsável e número de telefone
-WHEN o médico termina de cadastrar o cliente
+AND as informações adicionais: responsável e número de telefone
+WHEN o agente termina de cadastrar o cliente
 THEN o cadastro do cliente não é realizado com sucesso
 AND a mensagem "Há campos obrigatórios não preenchidos!" aparece na tela
-AND o médico volta para o cadastro
+AND o agente volta para o cadastro
 AND adiciona os campos que faltavam
