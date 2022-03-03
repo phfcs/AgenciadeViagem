@@ -32,3 +32,11 @@ THEN o cadastro do cliente não é realizado com sucesso
 AND a mensagem "Há campos obrigatórios não preenchidos!" aparece na tela
 AND o agente volta para o cadastro
 AND adiciona os campos que faltavam
+
+moficacao 1
+modificacao 2
+modificacao 3
+
+Mais um cenário
+
+Stackholders satisfeitos
