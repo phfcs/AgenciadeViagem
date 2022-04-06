@@ -4,7 +4,7 @@ Reservar hotel nas cidades da viagem
 Cancelar cidades e/ou hotéis da viagem	
 Notificar cliente de datas e checkin de vôos
 
-Feature: realizar marcação de exames para pacientes
+Feature: realizar mapeamento de uma viagem
 
     AS Um usuario do sistema (funcionário)
     I WANT TO mapear uma viagem
@@ -13,7 +13,7 @@ Feature: realizar marcação de exames para pacientes
 Scenario: Funcionário mapear a viagem de um cliente
 GIVEN o funcionário de nome "Igor Xavier", de CPF: "095104875-68", está na área "Mapeamento de Viagem"
 AND ele adiciona o nome do cliente, número do CPF, data de nascimento, endereço e telefone
-AND adiona as cidades e hoteis que o cliente irá visitar/hospedar-se
+AND adiciona as cidades e hoteis que o cliente irá visitar/hospedar-se
 WHEN o funcionário termina de adicionar os detalhes
 THEN o mapeamento foi realizado com sucesso
 AND a mensagem "Viagem mapeada!" aparece na tela
