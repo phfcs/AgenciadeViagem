@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "test": "tsc && jasmine --config=./spec/support/jasmine.json",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "start": "tsc && node compiledCode/server/server.js"
+  },
+  "keywords": [],
+  "author": "Pedro H. Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
+    "nodemon": "^2.0.15",
+    "pacote": "^13.1.1",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

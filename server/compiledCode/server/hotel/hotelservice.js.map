@@ -1,0 +1,1 @@
+{"version":3,"file":"hotelservice.js","sourceRoot":"","sources":["../../../hotel/hotelservice.ts"],"names":[],"mappings":";;;AACA,uDAAoD;AAEpD,MAAa,YAAY;IAAzB;QACI,oBAAe,GAAoB,IAAI,iCAAe,EAAE,CAAC;IAS7D,CAAC;IAPG,SAAS,CAAC,KAAY;QAClB,IAAI,CAAC,eAAe,CAAC,SAAS,CAAC,KAAK,CAAC,CAAC;IAC1C,CAAC;IAED,WAAW;QACP,OAAO,IAAI,CAAC,eAAe,CAAC,WAAW,EAAE,CAAC;IAC9C,CAAC;CACJ;AAVD,oCAUC"}
