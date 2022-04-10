@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Usuario } from "./../../../../comum/entidade/usuario"
+import {Usuario} from '../../../../commons/entidade/usuario';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { LoginDTO } from './../../../../comum/dto/logindto';
+import { LoginDTO } from './../../../../commons/dto/logindto';
 
 @Injectable({
   providedIn: 'root'

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import { LoginDTO } from '../../../../../comum/dto/logindto';
-import { Constants } from '../../../../../comum/constants';
+import { LoginDTO } from '../../../../../commons/dto/logindto'; 
+import { Constants } from '../../../../../commons/constants'; 
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -51,10 +51,12 @@ export class LoginComponent implements OnInit {
   mostrarAlertSucesso(mensagem: string): void {
     this.toastr.success(mensagem, "Sucesso!");
     this.resetarLogin();
+    alert(mensagem)
   }
 
   mostrarAlertErro(mensagem: string): void {
     this.toastr.error(mensagem, "Erro!");
+    alert(mensagem)
   }
 
 

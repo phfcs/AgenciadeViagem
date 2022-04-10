@@ -1,11 +1,11 @@
 import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CadastrarClienteComponent } from './pagina/cadastrar-cliente/cadastrar-cliente.component';
-import { ClienteCasaComponent } from './pagina/cliente/cliente-casa/cliente-casa/cliente-casa.component';
-import { LoginComponent } from './pagina/login/login.component';
-import { ReservasComponent } from './pagina/cliente/reservas/reservas/reservas.component';
-import { AdminCasaComponent } from './pagina/admin/admin-casa/admin-casa/admin-casa.component';
-import { VoosComponent } from './pagina/admin/voos/voos/voos.component';
+import { CadastrarClienteComponent } from './pagina/cadastrar-cliente/cadastrar-cliente.component'; 
+import { ClienteCasaComponent } from './pagina/cliente/cliente-casa/cliente-casa.component'; 
+import { LoginComponent } from './pagina/login/login.component'; 
+import { ReservasComponent } from './pagina/cliente/reservas/reservas.component'; 
+import { AdminCasaComponent } from './pagina/admin/admin-casa/admin-casa.component'; 
+import { HotelComponent } from './pagina/admin/hoteis/hoteis.component'; 
 const routes: Routes = [
   {
     path: '',
@@ -42,13 +42,13 @@ const routes: Routes = [
   children: [
     {
       path: '',
-      redirectTo: 'voos',
+      redirectTo: 'hoteis',
       pathMatch: 'full'
     }
     ,
     {
-      path: 'voos',
-      component: VoosComponent
+      path: 'hoteis',
+      component: HotelComponent
     }
   ]
 }

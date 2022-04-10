@@ -2,7 +2,7 @@
     <div class="testing" >
             <form>
                 <fieldset>
-                    <legend>Login - Agência de Viagens</legend>
+                    <legend>Login - Agência de Viagem</legend>
             
                     <div class="loginInput">
                         <input name="emailLogin" [(ngModel)] = "loginDTO.email" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SEU E-MAIL...">
@@ -22,11 +22,10 @@
               </div> 
               <div class="buttonTwo">
                 <a class="">Não tem uma conta?</a>
-                <button type="button" class="btn btn-outline-primary">Fazer Cadastro</button>  
+                <a routerLink="/cadastrar-cliente"><button type="button" class="btn btn-outline-primary">Fazer Cadastro</button></a>
               </div>
             </form>
 
     </div>
 </div>
 
-routerLink="/cadastrar-cliente"
