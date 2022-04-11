@@ -15,7 +15,7 @@ class ReservaRepository {
     }
     cancelar(reservaCliente) {
         let index = this.reservas.findIndex(reserva => {
-            (reserva.cpfCliente === reservaCliente.cpfCliente) && (reserva.hotel.codigoHotel === reservaCliente.hotel.codigoHotel);
+            (reserva.cpfCliente === reservaCliente.cpfCliente) && (reserva.pacote.codigoVoo === reservaCliente.pacote.codigoVoo);
         });
         this.reservas.splice(index, 1);
     }
@@ -29,7 +29,7 @@ class ReservaRepository {
         var now = new Date();
         let hourAtual = now.getHours();
         let minutesAtual = now.getMinutes();
-        let horarioSaida = reservaCliente.hotel.checkout.split(':');
+        let horarioSaida = reservaCliente.pacote.horarioSaida.split(':');
         let hourReserva = parseInt(horarioSaida[0]);
         let minutoReserva = parseInt(horarioSaida[1]);
         return (hourReserva > hourAtual) || ((hourReserva == hourAtual) && (minutoReserva >= minutesAtual));

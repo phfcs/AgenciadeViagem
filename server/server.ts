@@ -2,15 +2,15 @@ import express = require('express');
 import { LoginDTO } from '../commons/dto/logindto';
 import { Reserva } from '../commons/entidade/reserva';
 import { Usuario } from '../commons/entidade/usuario';
-import { Hotel } from '../commons/entidade/hotel'; 
 import { ReservaService } from './reserva/reservaservice';
 import { UsuarioService } from './usuario/usuarioservice'
-import {HotelService} from './hotel/hotelservice';
+import { Pacote } from '../commons/entidade/pacote';
+import { PacoteService } from './pacote/pacoteservice';
 
 var taserver = express();
 
 var usuarioService: UsuarioService = new UsuarioService();
-var hotelService: HotelService = new HotelService();
+var pacoteService: PacoteService = new PacoteService();
 var reservaService: ReservaService = new ReservaService();
 
 var allowCrossDomain = function (req: any, res: any, next: any) {
@@ -28,10 +28,9 @@ taserver.get('/usuarios', function (req: express.Request, res: express.Response)
   res.send(JSON.stringify(usuarioService.buscarTodos()));
 })
 
-taserver.get('/hoteis', function (req: express.Request, res: express.Response) {
-    res.send(JSON.stringify(hotelService.buscarTodos()));
+taserver.get('/pacotes', function (req: express.Request, res: express.Response) {
+    res.send(JSON.stringify(pacoteService.buscarTodos()));
   })
-
   taserver.get('/reservas', function (req: express.Request, res: express.Response) {
     res.send(JSON.stringify(reservaService.buscarTodos()));
   })
@@ -73,16 +72,17 @@ taserver.get('/hoteis', function (req: express.Request, res: express.Response) {
       res.status(400).send({ "mensagem": error.message });
     }
   })
-  taserver.post('/hoteis', function (req: express.Request, res: express.Response) {
-    var hotel: Hotel = <Hotel>req.body;
+
+  taserver.post('/pacotes', function (req: express.Request, res: express.Response) {
+    var pacote: Pacote = <Pacote>req.body;
     try {
-      hotelService.cadastrar(hotel);
+      pacoteService.cadastrar(pacote);
       res.send({ "mensagem": "Cadastro realizado com sucesso." });
     } catch (error) {
       res.status(400).send({ "mensagem": error.message });
     }
   })
-  
+
   taserver.post('/login', function (req: express.Request, res: express.Response) {
     var loginDTO: LoginDTO = <LoginDTO>req.body;
   

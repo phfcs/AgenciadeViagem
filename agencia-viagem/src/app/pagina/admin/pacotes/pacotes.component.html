@@ -1,0 +1,123 @@
+<table>
+    <tr>
+        <label>Origem : </label>
+        <select [(ngModel)]="pacote.localPartida"select id="estado" name="estado" required>
+        <option >Selecione seu estado de origem</option> 
+        <option value="Acre">AC</option>
+        <option value="Alagoas">AL</option>
+        <option value="Amapá">AP</option>
+        <option value="Amazonas">AM</option>
+        <option value="Bahia">BA</option>
+        <option value="Amapá">AP</option>
+        <option value="Ceará">AP</option>
+        <option value="Espírito Santo">ES</option>
+        <option value="Goiás">GO</option>
+        <option value="Maranhão">MA</option>
+        <option value="Mato Grosso">MT</option>
+        <option value="vMato Grosso do Sul">MS</option>
+        <option value="Minas Gerais">MG</option>
+        <option value="Pará">PA</option>
+        <option value="Paraíba">PB</option>
+        <option value="Paraná">PR</option>
+        <option value="Pernambuco">PE</option>
+        <option value="Piauí">PI</option>
+        <option value="Rio de Janeiro">RJ</option>
+        <option value="Rio Grande do Norte">RN</option>
+        <option value="Rio Grande do Sul">RS</option>
+        <option value="Rondônia">RO</option>
+        <option value="Roraima">RR</option>
+        <option value="Santa Catarina">SC</option>
+        <option value="São Paulo">SP</option>
+        <option value="Sergipe">SE</option>
+        <option value="Tocantins">TO</option>
+        <option value="Distrito Federal">DF</option>
+    </select>
+    </tr>
+    <tr>
+       <label>Destino : </label>
+        <select [(ngModel)]="pacote.localDestino"select id="estado" name="estado" required>
+            <option >Selecione seu estado de destino</option> 
+            <option value="Acre">AC</option>
+            <option value="Alagoas">AL</option>
+            <option value="Amapá">AP</option>
+            <option value="Amazonas">AM</option>
+            <option value="Bahia">BA</option>
+            <option value="Amapá">AP</option>
+            <option value="Ceará">AP</option>
+            <option value="Espírito Santo">ES</option>
+            <option value="Goiás">GO</option>
+            <option value="Maranhão">MA</option>
+            <option value="Mato Grosso">MT</option>
+            <option value="vMato Grosso do Sul">MS</option>
+            <option value="Minas Gerais">MG</option>
+            <option value="Pará">PA</option>
+            <option value="Paraíba">PB</option>
+            <option value="Paraná">PR</option>
+            <option value="Pernambuco">PE</option>
+            <option value="Piauí">PI</option>
+            <option value="Rio de Janeiro">RJ</option>
+            <option value="Rio Grande do Norte">RN</option>
+            <option value="Rio Grande do Sul">RS</option>
+            <option value="Rondônia">RO</option>
+            <option value="Roraima">RR</option>
+            <option value="Santa Catarina">SC</option>
+            <option value="São Paulo">SP</option>
+            <option value="Sergipe">SE</option>
+            <option value="Tocantins">TO</option>
+            <option value="Distrito Federal">DF</option>
+        </select>
+    </tr>
+        <label> Data da Viagem : </label>
+        <input [(ngModel)]="pacote.datavoo" type="date">
+      <tr></tr>
+      <label>    Hórario do Vôo : </label>
+        <input [(ngModel)]="pacote.horarioSaida" type="time">
+        <tr>
+            <label>Vôo: </label>
+                <select [(ngModel)]="pacote.empresa"select id="empresa" name="empresa" required>
+                    <option value="GOL">GOL </option>
+                    <option value="TAM">TAM</option>
+                    <option value="AVIANCA">AVI</option>
+                    <option value="AZUL">AZU</option>
+                    <option value="PARTICULAR">PTC</option>
+                    <option value="ITAPEMIRIM">ITA</option>
+                </select>
+                <input [(ngModel)]="pacote.codigovoo" type="number" min="2345" max="8999">
+    <tr>
+        <label>Quarto para: </label>
+        <select [(ngModel)]="pacote.hospedes"select id="quarto" name="quarto" required>
+            <option value="1 Pessoa"> 1 Pessoa </option>
+            <option value="2 Pessoas"> 2 Pessoas</option>
+            <option value="3 Pessoas"> 3 Pessoas</option>
+            <option value="4 pessoas"> 4 Pessoas</option>
+        </select>
+    </tr>
+    <tr>
+        <label>HOTEL : </label>
+        <input [(ngModel)]="pacote.nomeHotel" type="text">
+    </tr>
+    <button (click)="cadastrar()">Adicionar</button>
+    </table>
+    
+    <table class="uk-table uk-table-divider">
+        <tr *ngIf="pacotes.length > 0">
+            <th>Local de Partida</th>
+            <th>Local de Destino</th>
+            <th>Data da Viagem</th>
+            <th>Hórario do Vôo</th>
+            <th>Empresa Áerea</th>
+            <th>Código do Vôo</th>
+            <th>Quarto Para: </th>
+            <th>Nome do Hotel</th>
+        </tr>
+        <tr *ngFor="let pacote of pacotes" name="vooslist">
+            <td name="codigoVooList">{{pacote.localPartida}}</td>
+            <td name="datavooList">{{pacote.localDestino}}</td>
+            <td name="codigoAviaoList">{{pacote.datavoo}}</td>
+            <td name="codigoAviaoList">{{pacote.horarioSaida}}</td>
+            <td name="codigoAviaoList">{{pacote.empresa}}</td>
+            <td name="codigoAviaoList">{{pacote.codigovoo}}</td>
+            <td name="horarioSaidaList">{{pacote.hospedes}}</td>
+            <td name="codigoAviaoList">{{pacote.nomeHotel}}</td>
+        </tr>
+    </table>

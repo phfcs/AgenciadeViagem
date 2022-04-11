@@ -1,27 +1,28 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Servidor do teaching assistant",
   "main": "server.ts",
   "scripts": {
-    "test": "tsc && jasmine --config=./spec/support/jasmine.json",
+    "test": "npm run tsc && jasmine --config=./spec/support/jasmine.json",
     "tsc": "./node_modules/typescript/bin/tsc",
     "start": "tsc && node compiledCode/server/server.js"
   },
   "keywords": [],
-  "author": "Pedro H. Santos",
+  "author": "Hitallo Cavalcanti",
   "license": "ISC",
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@types/express": "^4.17.13",
-    "@types/jest": "^27.4.1",
-    "@types/node": "^17.0.23",
-    "nodemon": "^2.0.15",
-    "pacote": "^13.1.1",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
-  },
   "dependencies": {
-    "express": "^4.17.3"
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.10.2",
+    "@types/request-promise": "^4.1.48",
+    "jasmine": "^3.10.0",
+    "jasmine-promises": "^0.4.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
   }
 }

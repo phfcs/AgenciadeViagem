@@ -5,8 +5,9 @@
 
 export const environment = {
   production: false,
-  serverHost: "http://localhost:3000"
+  serverHost: "http://localhost:3000" 
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

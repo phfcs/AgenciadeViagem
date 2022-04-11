@@ -1,5 +1,5 @@
 import { Reserva } from "../../commons/entidade/reserva";
-import {ReservaPassagem} from "../../commons/entidade/reservapassagem";
+
 export class ReservaRepository {
     reservas: Reserva[] = []
 
@@ -13,7 +13,7 @@ export class ReservaRepository {
 
     cancelar(reservaCliente: Reserva): void {
         let index = this.reservas.findIndex(reserva => {
-            (reserva.cpfCliente === reservaCliente.cpfCliente) && (reserva.hotel.checkin === reservaCliente.hotel.checkin)
+            (reserva.cpfCliente === reservaCliente.cpfCliente) && (reserva.pacote.codigovoo === reservaCliente.pacote.codigovoo)
         })
 
         this.reservas.splice(index, 1);
@@ -31,7 +31,7 @@ export class ReservaRepository {
         var now = new Date();
         let hourAtual = now.getHours();
         let minutesAtual = now.getMinutes();
-        let horarioSaida = reservaCliente.hotel.checkout.split(':');
+        let horarioSaida = reservaCliente.pacote.horarioSaida.split(':');
         let hourReserva = parseInt(horarioSaida[0]);
         let minutoReserva = parseInt(horarioSaida[1]);
 

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Constants } from '../../../../../../commons/constants';
-import { Hotel } from '../../../../../../commons/entidade/hotel';
+import { Pacote } from '../../../../../../commons/entidade/pacote'; 
 import { Reserva } from '../../../../../../commons/entidade/reserva'; 
-import { HotelService } from 'src/app/services/hotel.service';
-import { Usuario } from '../../../../../../commons/entidade/usuario';
+import { PacoteService } from 'src/app/services/pacote.service'; 
+import { Usuario } from '../../../../../../commons/entidade/usuario'; 
 import { ReservaService } from 'src/app/services/reserva.service';
 import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-reservas',
@@ -15,12 +16,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ReservasComponent implements OnInit {
 
-  hoteis: Hotel[] = []
+  pacotes: Pacote[]=[]
   reservas: Reserva[] = [];
 
   constructor(
     private title: Title,
-    private hotelService: HotelService,
+    private pacoteService: PacoteService,
     private reservaService: ReservaService,
     private toastr: ToastrService
   ) { }
@@ -31,15 +32,14 @@ export class ReservasComponent implements OnInit {
   }
 
   private reset() {
-    this.hotelService.buscarTodos().subscribe(data => this.hoteis = data);
+    this.pacoteService.buscarTodos().subscribe(data => this.pacotes = data);
     this.buscarPorCpf();
   }
-
-  reservar(hotel: Hotel): void {
+  reservar(pacote: Pacote): void {
     let usuarioLogado: Usuario = JSON.parse(localStorage.getItem('usuarioLogado') || '{}');
     this.reservaService.cadastrar({
       cpfCliente: usuarioLogado.cpf,
-      hotel: hotel
+      pacote: pacote
     }).subscribe({
       next: (response) => {
         this.mostrarAlertSucesso(response.mensagem);
@@ -53,7 +53,7 @@ export class ReservasComponent implements OnInit {
 
   cancelar(reserva: Reserva): void {
     if (
-      confirm(`Deseja confirmar o cancelamento da Reserva para o Hotel com Check-in no dia ${reserva.hotel.checkin} e Check-out no dia ${reserva.hotel.checkout}?`)
+      confirm(`Deseja confirmar o cancelamento da Reserva para o Vôo com origem ${reserva.pacote.localPartida} e destino ${reserva.pacote.localDestino}?`)
     ) {
       this.reservaService.cancelar(reserva).subscribe({
         next: (response) => {

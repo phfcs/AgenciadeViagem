@@ -1,44 +1,52 @@
-<h3>Hoteis disponíveis</h3>
+<h3>Pacotes disponíveis</h3>
 <table class="uk-table uk-table-divider">
-    <tr *ngIf="hoteis.length > 0">
-        <th>Local</th>
-        <th>Check-in</th>
-        <th>Check-out</th>
-        <th>Hospedes</th>
-        <th>Nome Hotel</th>
-        <th>Foto Hotel</th>
+    <tr *ngIf="pacotes.length > 0">
+        <th>Local de Partida :</th>
+        <th>Local de Destino :</th>
+        <th>Data da Viagem :</th>
+        <th>Hórario do Vôo :</th>
+        <th>Empresa Áerea :</th>
+        <th>Código do Vôo :</th>
+        <th>Quarto : </th>
+        <th>Nome do Hotel :</th>
         <th>Reservar</th>
     </tr>
-    <tr *ngFor="let hotel of hoteis" name="hoteislist">
-        <td name="codigoHotelList">{{hotel.local}}</td>
-        <td name="estadoList">{{hotel.checkin}}</td>
-        <td name="checkoutList">{{hotel.checkout}}</td>
-        <td name="duracaoList">{{hotel.hospedes}}</td>
-        <td name="duracaoList">{{hotel.nomeHotel}}</td>
-        <td name="duracaoList">{{hotel.imagem}}</td>
-        <td><button id="btnReservasId" name="btReservas" (click)="reservar(hotel)">Reservar</button></td>
+    <tr *ngFor="let pacote of pacotes" name="vooslist">
+        <td name="codigoVooList">{{pacote.localPartida}}</td>
+            <td name="datavooList">{{pacote.localDestino}}</td>
+            <td name="codigoAviaoList">{{pacote.datavoo}}</td>
+            <td name="codigoAviaoList">{{pacote.horarioSaida}}</td>
+            <td name="codigoAviaoList">{{pacote.empresa}}</td>
+            <td name="codigoAviaoList">{{pacote.codigovoo}}</td>
+            <td name="horarioSaidaList">{{pacote.hospedes}}</td>
+            <td name="codigoAviaoList">{{pacote.nomeHotel}}</td>
+        <td><button id="btnReservasId" name="btReservas" (click)="reservar(pacote)">Reservar</button></td>
     </tr>
 </table>
 
 <h3>Reservas disponíveis</h3>
 <table class="uk-table uk-table-divider">
     <tr *ngIf="reservas.length > 0">
-        <th>Cliente</th>
-        <th>Local</th>
-        <th>Check-in</th>
-        <th>Checkout</th>
-        <th>Hóspedes</th>
-        <th>Nome Hotel</th>
-        <th>Foto Hotel</th>
-        <th>Cancelar Reserva</th>
+        <th>CPF Usuario :</th>
+        <th>Local de Partida :</th>
+        <th>Local de Destino :</th>
+        <th>Data da Viagem :</th>
+        <th>Hórario do Vôo :</th>
+        <th>Empresa Áerea :</th>
+        <th>Código do Vôo :</th>
+        <th>Quarto : </th>
+        <th>Nome do Hotel :</th>
     </tr>
     <tr *ngFor="let reserva of reservas" name="reservalist">
         <td name="reservaCpfClienteList">{{reserva.cpfCliente}}</td>
-        <td name="reservaCodigoHotelList">{{reserva.hotel.local}}</td>
-        <td name="reservaEstadoList">{{reserva.hotel.checkin}}</td>
-        <td name="reservaCheckoutList">{{reserva.hotel.checkout}}</td>
-        <td name="reservaDuracaoList">{{reserva.hotel.hospedes}}</td>
-        <td name="duracaoList">{{reserva.hotel.nomeHotel}}</td>
+        <td name="reservaCodigoVooList">{{reserva.pacote.localPartida}}</td>
+        <td name="reservaCodigoAviaoList">{{reserva.pacote.localDestino}}</td>
+        <td name="reservaHorarioSaidaList">{{reserva.pacote.datavoo}}</td>
+        <td name="reservaHorarioSaidaList">{{reserva.pacote.horarioSaida}}</td>
+        <td name="reservaHorarioSaidaList">{{reserva.pacote.empresa}}</td>
+        <td name="reservaHorarioSaidaList">{{reserva.pacote.codigovoo}}</td>
+        <td name="reservaLocalPartidaList">{{reserva.pacote.hospedes}}</td>
+        <td name="reservaHorarioSaidaList">{{reserva.pacote.nomeHotel}}</td>
         <td name="reservaCancelarList"><button id="btnReservasId" name="btReservas" (click)="cancelar(reserva)">Cancelar</button></td>
     </tr>
 </table>

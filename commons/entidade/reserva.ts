@@ -1,8 +1,8 @@
-import { Hotel } from "./hotel";
+import { Pacote } from "./pacote";
 
 
 export class Reserva {
     cpfCliente!: string;
-    hotel!: Hotel;
+    pacote!: Pacote;
     constructor(){}
 }
