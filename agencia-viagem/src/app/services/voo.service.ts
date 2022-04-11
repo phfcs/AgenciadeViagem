@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { LoginDTO } from '../../../../comum/dto/logindto';
-import { Voo } from '../../../../comum/entidade/voo';
+import { LoginDTO } from '../../../../commons/dto/logindto'; 
+import { Voo } from '../../../../commons/entidade/voo';
 @Injectable({
   providedIn: 'root'
 })

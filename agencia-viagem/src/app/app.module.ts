@@ -10,11 +10,15 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pagina/login/login.component';
 import { ClienteCasaComponent } from './pagina/cliente/cliente-casa/cliente-casa.component'; 
-import { ReservasComponent } from './pagina/cliente/reservas/reservas.component'; 
 import { AdminCasaComponent } from './pagina/admin/admin-casa/admin-casa.component'; 
 import { HotelComponent } from './pagina/admin/hoteis/hoteis.component';
 import { HotelService } from './services/hotel.service';
 import { ReservaService } from './services/reserva.service'; 
+import { VooService } from './services/voo.service';
+import { VoosComponent } from './pagina/admin/voos/voos.component';
+import { ReservasComponent } from './pagina/cliente/reservas/reservas.component'; 
+import { ReservaPassagemService } from './services/reservapassagem.service';
+import { ReservaseComponent } from './pagina/cliente/reservase/reservase.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,9 @@ import { ReservaService } from './services/reserva.service';
     ClienteCasaComponent,
     ReservasComponent,
     AdminCasaComponent,
-    HotelComponent
+    HotelComponent,
+    VoosComponent,
+    ReservaseComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,7 @@ import { ReservaService } from './services/reserva.service';
     HttpClientModule,
     ToastrModule.forRoot()
   ],
-  providers: [UsuarioService, HotelService, ReservaService],
+  providers: [UsuarioService, HotelService, ReservaService, VooService,ReservaPassagemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

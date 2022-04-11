@@ -4,30 +4,30 @@ const usuarioservice_1 = require("../usuario/usuarioservice");
 describe("Serviço de Usuários", () => {
     var service;
     var usuarioMock = {
-        nome: "Hitallo",
-        cpf: "43588683046",
-        email: "hcs3@cin.ufpe.br",
+        nome: "Pedro",
+        cpf: "11237691419",
+        email: "phfcs@cin.ufpe.br",
         senha: "teste",
         tipo: "CLIENTE"
     };
     var usuarioMockErroEmail = {
-        nome: "Hitallo",
+        nome: "Pedro",
         cpf: "04993984081",
-        email: "hcs3@cin.ufpe.br",
+        email: "phfcs@cin.ufpe.br",
         senha: "teste",
         tipo: "CLIENTE"
     };
     var loginDTOValido = {
-        email: "hcs3@cin.ufpe.br",
-        senha: "teste"
+        email: "phfcs@cin.ufpe.br",
+        senha: "teste",
     };
     var loginDTOEmailNaoCadastrado = {
-        email: "hcs34@cin.ufpe.br",
-        senha: "teste"
+        email: "phfcs@cin.ufpe.br",
+        senha: "teste",
     };
     var loginDTOSenhaInvalida = {
-        email: "hcs3@cin.ufpe.br",
-        senha: "testeErro"
+        email: "phfcs@cin.ufpe.br",
+        senha: "teste",
     };
     beforeEach(() => service = new usuarioservice_1.UsuarioService());
     it("Não possui registro de usuários", () => {

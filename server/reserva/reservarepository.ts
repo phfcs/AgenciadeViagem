@@ -1,5 +1,5 @@
 import { Reserva } from "../../commons/entidade/reserva";
-
+import {ReservaPassagem} from "../../commons/entidade/reservapassagem";
 export class ReservaRepository {
     reservas: Reserva[] = []
 
@@ -13,7 +13,7 @@ export class ReservaRepository {
 
     cancelar(reservaCliente: Reserva): void {
         let index = this.reservas.findIndex(reserva => {
-            (reserva.cpfCliente === reservaCliente.cpfCliente) && (reserva.hotel.codigoHotel === reservaCliente.hotel.codigoHotel)
+            (reserva.cpfCliente === reservaCliente.cpfCliente) && (reserva.hotel.checkin === reservaCliente.hotel.checkin)
         })
 
         this.reservas.splice(index, 1);

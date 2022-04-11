@@ -3,5 +3,7 @@ export class Constants {
     public static readonly LOGIN_TITULO: string = "Login";
     public static readonly RESERVAS_TITULO: string = "Reservas";
     public static readonly HOTEIS_TITULO: string = "Hoteis";
+    public static readonly VOOS_TITULO: string = "Voos";
+    public static readonly RESERVASE_TITULO:  string = "Reservase";
 
 }

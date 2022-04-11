@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Constants } from '../../../../../commons/constants'; 
-import { Usuario } from '../../../../../commons/entidade/usuario';  
+import { Constants } from '../../../../../commons/constants';
+import { Usuario } from '../../../../../commons/entidade/usuario'; 
 import { Router } from "@angular/router"
 
 @Component({
@@ -12,7 +12,6 @@ import { Router } from "@angular/router"
   styleUrls: ['./cadastrar-cliente.component.css']
 })
 export class CadastrarClienteComponent implements OnInit {
-
   usuario: Usuario = Usuario.ofUsuarioCliente();
   senhaConfirmacao = "";
 
@@ -56,14 +55,11 @@ export class CadastrarClienteComponent implements OnInit {
 
   mostrarAlertSucesso(mensagem: string): void {
     this.toastr.success(mensagem, "Sucesso!");
-    alert(mensagem)
     this.resetarUsuario();
   }
 
   mostrarAlertErro(mensagem: string): void {
-    alert(mensagem)
     this.toastr.error(mensagem, "Erro!");
-   
   }
 
 }

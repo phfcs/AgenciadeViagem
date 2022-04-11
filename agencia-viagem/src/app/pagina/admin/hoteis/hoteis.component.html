@@ -1,4 +1,5 @@
 <table>
+    <a routerLink="/.."><button type="button" class="btn btn-outline-primary">Home</button></a>
     <label for="estado">Pacote:</label>
     <select [(ngModel)]="hotel.local"select id="estado" name="estado" required>
 		<option value="Selecione um Destino">Selecione um Destino</option>
@@ -33,11 +34,15 @@
 	</select>
     <tr>
        <label>Check-in em: </label>
-        <input [(ngModel)]="hotel.checkin" type="date" name="checkin" required>
+        <input [(ngModel)]="hotel.checkin" type="datetime-local" id="meeting-time"
+       name="meeting-time" value="2022-04-07T14:00"
+       min="2022-04-07T14:00" max="2023-06-11T14:00">
     </tr>
     <tr>
         <label>Check-out em :</label>
-        <input [(ngModel)]="hotel.checkout" type="date" name="checkout" required>
+        <input [(ngModel)]="hotel.checkout" type="datetime-local" id="meeting-time"
+        name="meeting-time" value="2022-04-10T12:00"
+        min="2022-04-10T12:00" max="2023-06-14T12:00">
     </tr>
     <tr>
         <label>Quarto para: </label>
@@ -58,7 +63,7 @@
         <th>Hóspedes</th>
         <th>Nome Hotel</th>
     </tr>
-    <tr *ngFor="let hotel of hoteis" name="vooslist">
+    <tr *ngFor="let hotel of hoteis" name="hoteislist">
         <td name="localList">{{hotel.local}}</td>
         <td name="checkinList">{{hotel.checkin}}</td>
         <td name=" checkoutList">{{hotel.checkout}}</td>
