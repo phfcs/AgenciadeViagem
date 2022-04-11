@@ -1,0 +1,7 @@
+.uk-navbar-left {
+    display:flex;
+}
+
+.uk-navbar-item{
+    margin-left:10px;
+}
