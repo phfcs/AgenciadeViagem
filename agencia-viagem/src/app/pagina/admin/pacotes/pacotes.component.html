@@ -96,28 +96,32 @@
         <label>HOTEL : </label>
         <input [(ngModel)]="pacote.nomeHotel" type="text">
     </tr>
-    <button (click)="cadastrar()">Adicionar</button>
+    <button class="btn-primary" (click)="cadastrar()">Adicionar</button>
     </table>
-    
-    <table class="uk-table uk-table-divider">
-        <tr *ngIf="pacotes.length > 0">
-            <th>Local de Partida</th>
-            <th>Local de Destino</th>
-            <th>Data da Viagem</th>
-            <th>Hórario do Vôo</th>
-            <th>Empresa Áerea</th>
-            <th>Código do Vôo</th>
-            <th>Quarto Para: </th>
-            <th>Nome do Hotel</th>
-        </tr>
-        <tr *ngFor="let pacote of pacotes" name="vooslist">
-            <td name="codigoVooList">{{pacote.localPartida}}</td>
-            <td name="datavooList">{{pacote.localDestino}}</td>
-            <td name="codigoAviaoList">{{pacote.datavoo}}</td>
-            <td name="codigoAviaoList">{{pacote.horarioSaida}}</td>
-            <td name="codigoAviaoList">{{pacote.empresa}}</td>
-            <td name="codigoAviaoList">{{pacote.codigovoo}}</td>
-            <td name="horarioSaidaList">{{pacote.hospedes}}</td>
-            <td name="codigoAviaoList">{{pacote.nomeHotel}}</td>
-        </tr>
-    </table>
+
+    <table class="uk-table uk-table-divider table table-striped">
+    <thead>
+    <tr *ngIf="pacotes.length > 0">
+        <th>Local de Partida</th>
+        <th>Local de Destino</th>
+        <th>Data da Viagem</th>
+        <th>Hórario do Vôo</th>
+        <th>Empresa Áerea</th>
+        <th>Código do Vôo</th>
+        <th>Quarto Para: </th>
+        <th>Nome do Hotel</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let pacote of pacotes" name="vooslist">
+        <td name="codigoVooList">{{pacote.localPartida}}</td>
+        <td name="datavooList">{{pacote.localDestino}}</td>
+        <td name="codigoAviaoList">{{pacote.datavoo}}</td>
+        <td name="codigoAviaoList">{{pacote.horarioSaida}}</td>
+        <td name="codigoAviaoList">{{pacote.empresa}}</td>
+        <td name="codigoAviaoList">{{pacote.codigovoo}}</td>
+        <td name="horarioSaidaList">{{pacote.hospedes}}</td>
+        <td name="codigoAviaoList">{{pacote.nomeHotel}}</td>
+    </tr>
+</tbody>
+</table>

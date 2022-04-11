@@ -15,7 +15,7 @@ class ReservaRepository {
     }
     cancelar(reservaCliente) {
         let index = this.reservas.findIndex(reserva => {
-            (reserva.cpfCliente === reservaCliente.cpfCliente) && (reserva.pacote.codigoVoo === reservaCliente.pacote.codigoVoo);
+            (reserva.cpfCliente === reservaCliente.cpfCliente) && (reserva.pacote.codigovoo === reservaCliente.pacote.codigovoo);
         });
         this.reservas.splice(index, 1);
     }
