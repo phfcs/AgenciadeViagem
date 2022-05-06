@@ -58,7 +58,7 @@ export class ReservasComponent implements OnInit {
       this.reservaService.cancelar(reserva).subscribe({
         next: (response) => {
           this.mostrarAlertSucesso(response.mensagem);
-          this.buscarPorCpf();
+          this.reset();
         },
         error: (err) => {
           this.mostrarAlertErro(err.error.mensagem);
@@ -78,7 +78,13 @@ export class ReservasComponent implements OnInit {
   buscarPorCpf(): void {
     let usuarioLogado: Usuario = JSON.parse(localStorage.getItem('usuarioLogado') || '{}');
     let cpfCliente = usuarioLogado.cpf;
-
-    this.reservaService.buscarPorCpf(cpfCliente).subscribe(data => this.reservas = data);
+    this.reservaService.buscarPorCpf(cpfCliente).subscribe(data => {
+      this.reservas = data
+      let pacotereservado = this.pacotes.filter(item=>this.reservas.some(reserva=>item.codigovoo==reserva.pacote.codigovoo))[0];
+      console.log(pacotereservado);
+      let indice = this.pacotes.indexOf(pacotereservado);
+      console.log(indice);
+      if(indice>-1)  this.pacotes.splice(indice,1);
+    });
   }
 }
