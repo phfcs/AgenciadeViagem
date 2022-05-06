@@ -28,13 +28,16 @@ export class ReservaRepository {
     }
 
     isReservaHorarioValido(reservaCliente: Reserva): boolean {
+        console.log(JSON.stringify(reservaCliente));
+        var datavoo = new Date(reservaCliente.pacote.datavoo);
         var now = new Date();
         let hourAtual = now.getHours();
         let minutesAtual = now.getMinutes();
         let horarioSaida = reservaCliente.pacote.horarioSaida.split(':');
         let hourReserva = parseInt(horarioSaida[0]);
         let minutoReserva = parseInt(horarioSaida[1]);
+        
 
-        return (hourReserva > hourAtual) || ((hourReserva == hourAtual) && (minutoReserva >= minutesAtual))
+        return (now < datavoo) 
     }
 }
