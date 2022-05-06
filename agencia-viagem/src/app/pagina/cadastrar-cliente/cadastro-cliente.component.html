@@ -1,27 +1,36 @@
-<div class="container">
-    <div class="testing" >
-            <form>
-                <fieldset>
-                    <legend>Cadastre-se na Agencia de Viagens! <p> Preencha seus dados abaixo...</legend>
-            
-                    <div class="loginInput">
-                        <input name="nomeCliente" [(ngModel)] = "usuario.nome" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SEU NOME...">
-                    </div>
-                    <div class="loginInput">
-                        <input name="emailCliente" [(ngModel)] = "usuario.email" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SEU E-MAIL...">
-                    </div>
-                    <div class="loginInput">
-                        <input name="cpfCliente" [(ngModel)] = "usuario.cpf" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SEU CPF...">
-                    </div>
-                    <div class="passwordInput">
-                        <input name="senhaCliente" type="password" [(ngModel)] = "usuario.senha" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SUA SENHA...">
-                    </div>
-                    <div class="passwordInput">
-                        <input name="senhaConfirmacaoCliente" type="password" [(ngModel)] = "senhaConfirmacao" class="uk-input uk-form-width-large" type="text" placeholder="CONFIRME SUA SENHA...">
-                    </div>
-                </fieldset>
-                <button class="buttonTwo" (click) = "cadastrar()">Cadastrar</button>
-                <a routerLink=".."><button type="button" class="btn btn-outline-primary">JÁ TEM CADASTRO? FAÇA LOGIN!</button></a>
-            </form>
-            <br>
-        </div>
+<div class="big">
+    <div class="container">
+        <div class="testing" >
+                <form>
+                    <fieldset>
+                        <div class="bloco">
+                            <div>
+                                <legend>Cadastre-se agora! <p> Preencha seus dados abaixo...</legend>
+                    
+                            <div class="user">
+                                <input name="nomeCliente" [(ngModel)] = "usuario.nome" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SEU NOME...">
+                            </div>
+                            <div class="email">
+                                <input name="emailCliente" [(ngModel)] = "usuario.email" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SEU E-MAIL...">
+                            </div>
+                            <div class="cpf">
+                                <input name="cpfCliente" [(ngModel)] = "usuario.cpf" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SEU CPF...">
+                            </div>
+                            <div class="password">
+                                <input name="senhaCliente" type="password" [(ngModel)] = "usuario.senha" class="uk-input uk-form-width-large" type="text" placeholder="DIGITE SUA SENHA...">
+                            </div>
+                            <div class="password">
+                                <input name="senhaConfirmacaoCliente" type="password" [(ngModel)] = "senhaConfirmacao" class="uk-input uk-form-width-large" type="text" placeholder="CONFIRME SUA SENHA...">
+                            </div>
+                            </div>
+                        </div>
+                    
+                        
+                    </fieldset>
+                    <button class="buttonTwo" (click) = "cadastrar()">Cadastrar</button>
+                    <a routerLink=".."><button type="button" class="btn btn-outline-primary">JÁ TEM CADASTRO? FAÇA LOGIN!</button></a>
+                </form>
+                <br>
+            </div>
+
+</div>
