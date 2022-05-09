@@ -83,6 +83,17 @@ taserver.get('/pacotes', function (req: express.Request, res: express.Response) 
     }
   })
 
+  taserver.post('/pacotes/cancelar', function (req: express.Request, res: express.Response) {
+    var pacote: Pacote = <Pacote>req.body;
+  
+    try {
+      pacoteService.cancelar(pacote);
+      res.send({ "mensagem": "Cancelamento realizado com sucesso." });
+    } catch (error) {
+      res.status(400).send({ "mensagem": error.message });
+    }
+  })
+
   taserver.post('/login', function (req: express.Request, res: express.Response) {
     var loginDTO: LoginDTO = <LoginDTO>req.body;
   
