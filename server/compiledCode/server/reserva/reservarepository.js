@@ -34,7 +34,7 @@ class ReservaRepository {
         let horarioSaida = reservaCliente.pacote.horarioSaida.split(':');
         let hourReserva = parseInt(horarioSaida[0]);
         let minutoReserva = parseInt(horarioSaida[1]);
-        return (now < datavoo);
+        return (now <= datavoo) || (hourReserva > hourAtual);
     }
 }
 exports.ReservaRepository = ReservaRepository;

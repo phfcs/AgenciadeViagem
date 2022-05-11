@@ -38,6 +38,6 @@ export class ReservaRepository {
         let minutoReserva = parseInt(horarioSaida[1]);
         
 
-        return (now < datavoo) 
+        return (now <= datavoo) || (hourReserva > hourAtual)
     }
 }
