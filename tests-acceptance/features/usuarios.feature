@@ -17,6 +17,12 @@ Scenario: Cadastro de cliente com cpf já cadastrado
     When Eu cadastro com CPF "12345691419" Nome "Pedro Henrique F. Cardoso dos Santos" Senha: "teste" Senha confirmação:"teste" e E-mail: "phfcs.santos@gmail.com" 
     Then Eu vejo uma mensagem de erro
 
+Scenario: Cadastro de cliente  não cadastrado 
+    Given Eu estou na pagina Crie sua conta!
+    When Eu cadastro com CPF "012345678910" Nome "Bruno Cezario" Senha: "bruno123" Senha confirmação:"bruno123" e E-mail: "brsc@cin.ufpe.br" 
+    Then Eu sou redirecionado para a página "Login"
+    Then Eu vejo uma mensagem de sucesso
+    
 Scenario: Cadastro de cliente com e-mail já cadastrado 
     Given Eu estou na pagina Crie sua conta!
     Given O CPF "40570104084" ainda não foi cadastrado
@@ -49,3 +55,45 @@ Scenario: Login de cliente com senha inválida
     Given O E-mail "phfcs@cin.ufpe.br" está cadastrado com senha "teste" e tipo "CLIENTE"
     When Eu faço login E-mail: "phfcs@cin.ufpe.br" Senha: "teste@senha@invalida"
     Then Eu vejo uma mensagem de erro
+
+Scenario: Cadastro de cliente com cpf e e-mail não cadastrado 
+    Given Eu estou na pagina Crie sua conta!
+    Given O CPF "12345691410" ainda não foi cadastrado
+    Given O E-mail "phfcs2@cin.ufpe.br" ainda não foi cadastrado
+    When Eu cadastro com CPF "12345691410" Nome "Pedro Henrique F. Cardoso dos Santos" Senha: "teste" Senha confirmação:"teste" e E-mail: "phfcs2@cin.ufpe.br" 
+    Then Eu sou redirecionado para a página "Login"
+    Then Eu vejo uma mensagem de sucesso
+
+Scenario: Cadastro de cliente com cpf e e-mail não cadastrado 
+    Given Eu estou na pagina Crie sua conta!
+    Given O CPF "12345678910" ainda não foi cadastrado
+    Given O E-mail "jgpp@cin.ufpe.br" ainda não foi cadastrado
+    When Eu cadastro com CPF "12345678910" Nome "Joao Guilherme Pontes de Paiva" Senha: "joaodelas" Senha confirmação:"joaodelas" e E-mail: "jgpp@cin.ufpe.br" 
+    Then Eu sou redirecionado para a página "Login"
+    Then Eu vejo uma mensagem de sucesso
+
+
+ Scenario: Login de cliente com sucesso
+        Given Eu estou na pagina Login
+        Given O E-mail "jgpp@cin.ufpe.br" está cadastrado com senha "teste" e tipo "CLIENTE"
+        When Eu faço login E-mail: "jgpp@cin.ufpe.br" Senha: "joaodelas"
+        Then Eu vejo uma mensagem de sucesso
+        Then Eu sou redirecionado para a página "Reservas"
+
+
+
+
+Scenario: Login de cliente com sucesso
+        Given Eu estou na pagina Login
+        Given O E-mail "jgpp2@cin.ufpe.br" está cadastrado com senha "teste" e tipo "CLIENTE"
+        When Eu faço login E-mail: "jgpp2@cin.ufpe.br" Senha: "joaodelas"
+        Then Eu vejo uma mensagem de sucesso
+        Then Eu sou redirecionado para a página "Reservas"
+
+
+Scenario: Cliente deseja excluir uma reserva
+Given O E-mail "phfcs@cin.ufpe.br" está cadastrado com senha "teste" e tipo "CLIENTE"
+When Eu faço login E-mail: "phfcs@cin.ufpe.br" Senha: "teste"	
+When Visualizo minhas reservas
+When clico no bota “Cancelar” 
+Then  É realizada a exclusão da reserva com sucesso
