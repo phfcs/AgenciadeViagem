@@ -89,11 +89,3 @@ Scenario: Login de cliente com sucesso
         When Eu faço login E-mail: "jgpp2@cin.ufpe.br" Senha: "joaodelas"
         Then Eu vejo uma mensagem de sucesso
         Then Eu sou redirecionado para a página "Reservas"
-
-
-Scenario: Cliente deseja excluir uma reserva
-Given O E-mail "phfcs@cin.ufpe.br" está cadastrado com senha "teste" e tipo "CLIENTE"
-When Eu faço login E-mail: "phfcs@cin.ufpe.br" Senha: "teste"	
-When Visualizo minhas reservas
-When clico no bota “Cancelar” 
-Then  É realizada a exclusão da reserva com sucesso
