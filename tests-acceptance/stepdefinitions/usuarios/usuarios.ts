@@ -89,3 +89,14 @@ Then(/^Eu vejo uma mensagem de erro$/, { timeout: 2 * 60000 }, async () => {
     await expect(expectedEle.isDisplayed()).to.eventually.equal(true);
 });
 
+Given(/^Eu estou na pagina Acessar sua conta!$/, { timeout: 2 * 60000 }, async () => {
+    await browser.get("http://localhost:4200/login");
+    await expect(browser.getTitle()).to.eventually.equal("login!");
+});
+
+
+Given(/^Eu estou na pagina Reserva$/, { timeout: 2 * 60000 }, async () => {
+    await browser.get("http://localhost:4200/clientes/reservas");
+    await expect(browser.getTitle()).to.eventually.equal("Reserva");
+});
+

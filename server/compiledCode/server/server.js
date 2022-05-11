@@ -70,6 +70,16 @@ taserver.post('/pacotes', function (req, res) {
         res.status(400).send({ "mensagem": error.message });
     }
 });
+taserver.post('/pacotes/cancelar', function (req, res) {
+    var pacote = req.body;
+    try {
+        pacoteService.cancelar(pacote);
+        res.send({ "mensagem": "Cancelamento realizado com sucesso." });
+    }
+    catch (error) {
+        res.status(400).send({ "mensagem": error.message });
+    }
+});
 taserver.post('/login', function (req, res) {
     var loginDTO = req.body;
     try {

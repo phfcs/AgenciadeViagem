@@ -8,6 +8,12 @@ class PacoteRepository {
     adicionar(pacote) {
         this.pacotes.push(pacote);
     }
+    cancelar(pacoteAdmin) {
+        let index = this.pacotes.findIndex(pacote => {
+            (pacote.codigovoo === pacoteAdmin.codigovoo) && (pacote.empresa === pacoteAdmin.empresa);
+        });
+        this.pacotes.splice(index, 1);
+    }
     buscarTodos() {
         return this.pacotes;
     }

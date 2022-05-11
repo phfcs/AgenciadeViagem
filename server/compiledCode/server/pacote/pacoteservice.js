@@ -9,6 +9,9 @@ class PacoteService {
     cadastrar(pacote) {
         this.pacoteRepository.adicionar(pacote);
     }
+    cancelar(pacote) {
+        this.pacoteRepository.cancelar(pacote);
+    }
     buscarTodos() {
         return this.pacoteRepository.buscarTodos();
     }
