@@ -15,6 +15,10 @@ export class PacoteService {
     cadastrar(pacote: Pacote): Observable<any> {
       return this.http.post(environment.serverHost + "/pacotes", pacote, { headers: this.headers })
     }
+
+    cancelar(pacote: Pacote): Observable<any> {
+      return this.http.post(environment.serverHost + "/pacotes/cancelar", pacote, { headers: this.headers })
+    }
   
     buscarTodos(): Observable<any> {
       return this.http.get(environment.serverHost + "/pacotes", { headers: this.headers })

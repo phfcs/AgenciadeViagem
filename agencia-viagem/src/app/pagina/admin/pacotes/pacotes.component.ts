@@ -36,9 +36,29 @@ import { PacoteService } from 'src/app/services/pacote.service';
           this.reset();
         });
       }
+
+      cancelar(pacote: Pacote): void {
+        if (
+          confirm(`Deseja confirmar o cancelamento do Pacote com Vôo com origem ${pacote.localPartida} e destino ${pacote.localDestino}?`)
+        ) {
+          this.pacoteService.cancelar(pacote).subscribe({
+            next: (response) => {
+              this.mostrarAlertSucesso(response.mensagem);
+              this.reset();
+            },
+            error: (err) => {
+              this.mostrarAlertErro(err.error.mensagem);
+            }
+          })
+        }
+      }
     
       mostrarAlertSucesso(mensagem: string): void {
         this.toastr.success(mensagem, "Sucesso!");
+      }
+
+      mostrarAlertErro(mensagem: string): void {
+        this.toastr.error(mensagem, "Erro!");
       }
     
     }
