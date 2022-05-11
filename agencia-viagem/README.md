@@ -1,5 +1,24 @@
-# AgenciaViagem
+# Agencia-de-Viagem #
 
+Repositório com as entregas da disciplina: [Engenharia de Software e Sistemas - 2021.2 ](https://docs.google.com/spreadsheets/d/1zD2Ja90aCDC6su6KFdskS_NCxW5Y2zDGB9rjDXqLlNo/edit#gid=0)
+
+## Equipe
+
+| [Pedro H. Santos](https://github.com/phfcs) | [João Guilherme](https://github.com/brunorscezario) | [Bruno Cezario](https://github.com/Agso7) | [Lukas Asael](https://github.com/lukasasael) | | [Thiago Alves](https://github.com/thiagoabarbosa) | 
+|:---------------------:|:------------------:|:----------------:|:--------------------:|
+
+## Principais entregas
+
+- [x] Entrega Projeto Parcial - 11/04
+- [x] Apresentação Projeto Parcial - 13/03
+- [x] Commit Final - 10/05
+- [x] Apresentação Final - 11/05
+
+## Kanban do projeto
+
+[Link](https://trello.com/b/z8BPEDEn/ag%C3%AAncia-de-viagem)
+
+## Angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
 ## Development server

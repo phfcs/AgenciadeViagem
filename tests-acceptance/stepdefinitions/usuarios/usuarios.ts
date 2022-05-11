@@ -99,4 +99,8 @@ Given(/^Eu estou na pagina Reserva$/, { timeout: 2 * 60000 }, async () => {
     await browser.get("http://localhost:4200/clientes/reservas");
     await expect(browser.getTitle()).to.eventually.equal("Reserva");
 });
+When(/^ Eu cancelo a viagem$/,{ timeout: 2 * 60000 }, async () => {
+    await browser.get("http://localhost:4200/clientes/reservas");
+    await expect(browser.getTitle()).to.eventually.equal("Reserva");
+});
 

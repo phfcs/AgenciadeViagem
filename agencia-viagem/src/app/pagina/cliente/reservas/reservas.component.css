@@ -1,9 +1,54 @@
-.btn-primary {
-    border-radius:2.5px;
-    border:none;
-    padding:4px 6px;
+.big{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-image: url(../../../../images/travel-concept-with-landmarks.jpg);
+    background-repeat: round;
+    height: 100vh;
 }
 
-body{
-    padding:10px;
+
+
+
+
+.big .container .buttonTwo{
+    display:flex;
+    justify-content: right;
+    
 }
+.big .container .buttonTwo button{
+    position: absolute;
+    right: 1%;
+	top: 5%;
+    background-color: white;
+ 
+}
+.big .container .buttonTwo button:hover{
+    background-color: #0066ff;
+}
+
+.big .container .table {
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 0 0 1em black;   
+    padding: 20px;
+    margin-top:20px;
+}
+
+
+@media screen and (max-width: 1650px) {
+    .big{
+        background-image: url(../../../../images/travel-concept-with-landmarks.jpg);
+        background-repeat: round;
+    }
+    
+}    
+
+
+@media screen and (max-width: 950px) {
+    .big{
+        background-image: url(../../../../images/travel-adventure-with-baggage.jpg);
+        background-repeat: round;
+    }
+    
+}    
