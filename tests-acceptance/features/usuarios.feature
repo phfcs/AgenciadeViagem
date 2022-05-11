@@ -1,4 +1,4 @@
-Feature: As a novo cliente
+: As a novo cliente
          I want to me cadastrar no Sistema
          So that I can fazer login como CLIENTE
 

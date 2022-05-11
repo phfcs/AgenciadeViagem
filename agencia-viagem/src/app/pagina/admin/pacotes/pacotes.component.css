@@ -9,3 +9,95 @@
 body{
     padding:10px;
 }
+.big{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-image: url(../../../../images/travel-concept-with-landmarks.jpg);
+    background-repeat: round;
+    height: 100vh;
+}
+
+
+
+
+
+.big .container .buttonTwo{
+    display:flex;
+    justify-content: right;
+    
+}
+.big .container .buttonTwo button{
+    position: absolute;
+    right: 1%;
+	top: 5%;
+    background-color: white;
+ 
+}
+.big .container .buttonTwo button:hover{
+    background-color: #0066ff;
+}
+
+.big .container .table {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    width: 25%;
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 0 0 1em black;   
+    padding: 20px;
+    margin-top:20px;
+}
+
+.big .container .table table{
+    margin-left: 2vw;
+}
+
+
+@media screen and (max-width: 1650px) {
+    .big{
+        background-image: url(../../../../images/travel-concept-with-landmarks.jpg);
+        background-repeat: round;
+    }
+    .big .container .table {
+        left: 33vw;
+        width: 30%;
+
+    }
+    .big .container .table table{
+        margin-left: 2vw;
+    }
+    
+}    
+
+@media screen and (max-width: 1250px) {
+    .big{
+        background-image: url(../../../../images/travel-adventure-with-baggage.jpg);
+        background-repeat: round;
+    }
+    .big .container .table {
+        left: 30vw;
+        width: 40%;
+
+    }
+    .big .container .table table{
+        margin-left: 2vw;
+    }
+}    
+
+
+@media screen and (max-width: 900px) {
+    .big{
+        background-image: url(../../../../images/travel-adventure-with-baggage.jpg);
+        background-repeat: round;
+    }
+    .big .container .table {
+        left: 18vw;
+        width: 63%;
+
+    }
+    .big .container .table table{
+        margin-left: 2vw;
+    }
+}    

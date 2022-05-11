@@ -1,63 +1,75 @@
-<div class="buttonTwo">
-    <a routerLink="/login"><button type="button" class="btn btn-outline-primary">Sair</button></a>
-  </div>
-<h3>Pacotes disponíveis</h3>
-<table class="uk-table uk-table-divider table table-striped">
-    <thead>
-    <tr *ngIf="pacotes.length > 0">
-        <th>Local de Partida</th>
-        <th>Local de Destino</th>
-        <th>Data da Viagem</th>
-        <th>Hórario do Vôo</th>
-        <th>Empresa Áerea</th>
-        <th>Código do Vôo</th>
-        <th>Quarto</th>
-        <th>Nome do Hotel</th>
-        <th></th>
-    </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let pacote of pacotes" name="vooslist">
-        <td name="codigoVooList">{{pacote.localPartida}}</td>
-            <td name="datavooList">{{pacote.localDestino}}</td>
-            <td name="codigoAviaoList">{{pacote.datavoo}}</td>
-            <td name="codigoAviaoList">{{pacote.horarioSaida}}</td>
-            <td name="codigoAviaoList">{{pacote.empresa}}</td>
-            <td name="codigoAviaoList">{{pacote.codigovoo}}</td>
-            <td name="horarioSaidaList">{{pacote.hospedes}}</td>
-            <td name="codigoAviaoList">{{pacote.nomeHotel}}</td>
-        <td><button class="btn-primary" id="btnReservasId" name="btReservas" (click)="reservar(pacote)">Reservar</button></td>
-    </tr>
-</tbody>
-</table>
-
-<h3>Reservas disponíveis</h3>
-<table class="uk-table uk-table-divider table table-striped">
-    <thead>
-    <tr *ngIf="reservas.length > 0">
-        <th>CPF Usuario</th>
-        <th>Local de Partida</th>
-        <th>Local de Destino</th>
-        <th>Data da Viagem</th>
-        <th>Hórario do Vôo</th>
-        <th>Empresa Áerea</th>
-        <th>Código do Vôo</th>
-        <th>Quarto</th>
-        <th>Nome do Hotel</th>
-    </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let reserva of reservas" name="reservalist">
-        <td name="reservaCpfClienteList">{{reserva.cpfCliente}}</td>
-        <td name="reservaCodigoVooList">{{reserva.pacote.localPartida}}</td>
-        <td name="reservaCodigoAviaoList">{{reserva.pacote.localDestino}}</td>
-        <td name="reservaHorarioSaidaList">{{reserva.pacote.datavoo}}</td>
-        <td name="reservaHorarioSaidaList">{{reserva.pacote.horarioSaida}}</td>
-        <td name="reservaHorarioSaidaList">{{reserva.pacote.empresa}}</td>
-        <td name="reservaHorarioSaidaList">{{reserva.pacote.codigovoo}}</td>
-        <td name="reservaLocalPartidaList">{{reserva.pacote.hospedes}}</td>
-        <td name="reservaHorarioSaidaList">{{reserva.pacote.nomeHotel}}</td>
-        <td name="reservaCancelarList"><button class="btn-primary" id="btnReservasId" name="btReservas" (click)="cancelar(reserva)">Cancelar</button></td>
-    </tr>
-</tbody>
-</table>
+<html>
+    <div class="big">
+        <div class="container">
+            <div class="buttonTwo">
+                <a routerLink="/login"><button type="button" class="btn btn-outline-primary">Sair</button></a>
+            </div>
+            
+            <div class="table">
+                <h3>Pacotes disponíveis</h3>
+                <table class="uk-table uk-table-divider table table-striped">
+                    <thead>
+                    <tr *ngIf="pacotes.length > 0">
+                        <th>Local de Partida</th>
+                        <th>Local de Destino</th>
+                        <th>Data da Viagem</th>
+                        <th>Hórario do Vôo</th>
+                        <th>Empresa Áerea</th>
+                        <th>Código do Vôo</th>
+                        <th>Quarto</th>
+                        <th>Nome do Hotel</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pacote of pacotes" name="vooslist">
+                        <td name="codigoVooList">{{pacote.localPartida}}</td>
+                            <td name="datavooList">{{pacote.localDestino}}</td>
+                            <td name="codigoAviaoList">{{pacote.datavoo}}</td>
+                            <td name="codigoAviaoList">{{pacote.horarioSaida}}</td>
+                            <td name="codigoAviaoList">{{pacote.empresa}}</td>
+                            <td name="codigoAviaoList">{{pacote.codigovoo}}</td>
+                            <td name="horarioSaidaList">{{pacote.hospedes}}</td>
+                            <td name="codigoAviaoList">{{pacote.nomeHotel}}</td>
+                        <td><button class="btn-primary" id="btnReservasId" name="btReservas" (click)="reservar(pacote)">Reservar</button></td>
+                    </tr>
+                </tbody>
+                </table>
+            
+                <h3>Reservas disponíveis</h3>
+                <table class="uk-table uk-table-divider table table-striped">
+                    <thead>
+                    <tr *ngIf="reservas.length > 0">
+                        <th>CPF Usuario</th>
+                        <th>Local de Partida</th>
+                        <th>Local de Destino</th>
+                        <th>Data da Viagem</th>
+                        <th>Hórario do Vôo</th>
+                        <th>Empresa Áerea</th>
+                        <th>Código do Vôo</th>
+                        <th>Quarto</th>
+                        <th>Nome do Hotel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reserva of reservas" name="reservalist">
+                        <td name="reservaCpfClienteList">{{reserva.cpfCliente}}</td>
+                        <td name="reservaCodigoVooList">{{reserva.pacote.localPartida}}</td>
+                        <td name="reservaCodigoAviaoList">{{reserva.pacote.localDestino}}</td>
+                        <td name="reservaHorarioSaidaList">{{reserva.pacote.datavoo}}</td>
+                        <td name="reservaHorarioSaidaList">{{reserva.pacote.horarioSaida}}</td>
+                        <td name="reservaHorarioSaidaList">{{reserva.pacote.empresa}}</td>
+                        <td name="reservaHorarioSaidaList">{{reserva.pacote.codigovoo}}</td>
+                        <td name="reservaLocalPartidaList">{{reserva.pacote.hospedes}}</td>
+                        <td name="reservaHorarioSaidaList">{{reserva.pacote.nomeHotel}}</td>
+                        <td name="reservaCancelarList"><button class="btn-primary" id="btnReservasId" name="btReservas" (click)="cancelar(reserva)">Cancelar</button></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+                
+        </div>
+    </div>
+</html>
+        
+            
