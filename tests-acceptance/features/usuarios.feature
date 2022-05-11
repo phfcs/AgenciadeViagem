@@ -1,4 +1,4 @@
-: As a novo cliente
+Feature: As a novo cliente
          I want to me cadastrar no Sistema
          So that I can fazer login como CLIENTE
 
@@ -79,9 +79,6 @@ Scenario: Cadastro de cliente com cpf e e-mail não cadastrado
         When Eu faço login E-mail: "jgpp@cin.ufpe.br" Senha: "joaodelas"
         Then Eu vejo uma mensagem de sucesso
         Then Eu sou redirecionado para a página "Reservas"
-
-
-
 
 Scenario: Login de cliente com sucesso
         Given Eu estou na pagina Login
